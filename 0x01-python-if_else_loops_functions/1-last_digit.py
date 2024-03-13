@@ -5,6 +5,7 @@ if number < 0:
     number = number * -1
     n = number % 10
     n = n * -1
+    number = number * -1
 else:
     n = number % 10
 if n == 0:
