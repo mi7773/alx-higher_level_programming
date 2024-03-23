@@ -12,8 +12,6 @@ int check_cycle(listint_t *list)
 	listint_t *c;
 	int r = 0;
 
-	if (list == 0)
-		return (r);
 	while(list && r == 0)
 	{
 		t = list;
