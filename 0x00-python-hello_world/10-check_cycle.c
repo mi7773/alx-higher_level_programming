@@ -34,5 +34,11 @@ int check_cycle(listint_t *list)
 			list = list->next;
 		}
 	}
+	while(p)
+	{
+		c = p;
+		p = p->n;
+		free(c);
+	}
 	return (r);
 }
