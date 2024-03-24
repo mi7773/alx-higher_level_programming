@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -8,24 +9,30 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *t;
-	listint_t *c;
+	node *c = NULL;
+	node *p = NULL;
 	int r = 0;
 
 	while(list && r == 0)
 	{
-		t = list;
-		c = list;
+		node *t = p;
 		while(t)
 		{
-			if (c == t->next)
+			if (list == t->d)
 			{
 				r = 1;
 				break;
 			}
-			t = t->next;
+			t = t->n;
 		}
-		list = list->next;
+		if (r == 0)
+		{
+			c = malloc(sizeof(node));
+			c->d = list;
+			c->n = p;
+			p = c;
+			list = list->next;
+		}
 	}
 	return (r);
 }

@@ -17,6 +17,20 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * struct node_node - draft
+ * @d: draft
+ * @n: draft
+ *
+ * Description: draft
+ *
+ */
+typedef struct node_node
+{
+	struct listint_s *d;
+	struct node_node *n;
+} node;
+
 size_t print_listint(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
 void free_listint(listint_t *head);
