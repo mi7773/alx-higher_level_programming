@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -9,36 +8,30 @@
  */
 int check_cycle(listint_t *list)
 {
-	node *c = NULL;
-	node *p = NULL;
+	listint_t *copy = list;
+	listint_t *t = NULL;
+	listint_t *p = NULL;
+	int i = 0;
+	int j = 0;
 	int r = 0;
 
-	while(list && r == 0)
+	while(copy && r == 0)
 	{
-		node *t = p;
-		while(t)
+		t = copy->next;
+		p = list;
+		j = 0;
+		while(t && j < i)
 		{
-			if (list == t->d)
+			if (t == p)
 			{
 				r = 1;
 				break;
 			}
-			t = t->n;
+			p = p->next;
+			j++;
 		}
-		if (r == 0)
-		{
-			c = malloc(sizeof(node));
-			c->d = list;
-			c->n = p;
-			p = c;
-			list = list->next;
-		}
-	}
-	while(p)
-	{
-		c = p;
-		p = p->n;
-		free(c);
+		i++;
+		copy = copy->next;
 	}
 	return (r);
 }
