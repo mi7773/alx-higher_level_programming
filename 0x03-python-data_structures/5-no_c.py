@@ -7,4 +7,4 @@ def no_c(my_string):
     for i in new_string:
         if i == 'c' or i == 'C':
             n_string.remove(i)
-    return ''.join(map(str,n_string))
+    return ''.join(map(str, n_string))
