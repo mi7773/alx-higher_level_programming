@@ -7,10 +7,10 @@ def roman_to_int(roman_string):
     roman_dict = {'I': 1, 'V': 5, 'X': 10,
                   'L': 50, 'C': 100, 'D': 500,
                   'M': 1000}
-    if roman_string is None:
+    if roman_string is None or type(roman_string) is not str:
         return 0
     for i in roman_string:
-        if roman_dict.get(i) is None or type(roman_string) is not str:
+        if roman_dict.get(i) is None:
             return 0
         result += roman_dict[i]
         if roman_dict[i] > v and c != 0:
