@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
     if roman_string is None:
         return 0
     for i in roman_string:
-        if roman_dict.get(i) is None:
+        if roman_dict.get(i) is None or type(roman_string) is not str:
             return 0
         result += roman_dict[i]
         if roman_dict[i] > v and c != 0:
