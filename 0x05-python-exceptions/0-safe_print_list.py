@@ -2,7 +2,6 @@
 
 def safe_print_list(my_list=[], x=0):
     """prints x elements of a list."""
-    i = 1
     for i in range(x):
         try:
             print(my_list[i], end="")
@@ -10,4 +9,7 @@ def safe_print_list(my_list=[], x=0):
             i -= 1
             break
     print()
-    return i + 1
+    if x == 0:
+        return 0
+    else:
+        return i + 1
