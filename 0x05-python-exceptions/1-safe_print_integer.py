@@ -5,6 +5,6 @@ def safe_print_integer(value):
     try:
         r = True
         print(F"{value:d}")
-    except ValueError:
+    except (ValueError, TypeError):
         r = False
     return r
