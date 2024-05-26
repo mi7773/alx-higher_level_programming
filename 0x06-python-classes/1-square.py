@@ -19,6 +19,6 @@ class Square(object):
         Initializes objects.
 
         Args:
-            size: Size of the square. 
+            size: Size of the square.
         """
         self.__size = size
