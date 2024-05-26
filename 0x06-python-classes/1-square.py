@@ -1,18 +1,24 @@
 #!/usr/bin/python3
 
 """
-Contains a Square class
+Contains a Square class.
 """
 
 
 class Square(object):
     """
-    an empty class that defines a square.
+    An empty class that defines a square.
 
-    the __init__ method initializes objects
+    The __init__ method initializes objects.
 
     Args:
-        size : size of the square
+        size: Size of the square.
     """
     def __init__(self, size):
+        """
+        Initializes objects.
+
+        Args:
+            size: Size of the square. 
+        """
         self.__size = size
