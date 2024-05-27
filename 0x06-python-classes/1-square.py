@@ -7,7 +7,7 @@ Contains a Square class.
 
 class Square(object):
     """
-    An empty class that defines a square.
+    Defines a square.
     """
     def __init__(self, size):
         """
