@@ -57,9 +57,9 @@ class Square(object):
     @position.setter
     def position(self, position):
         checks = ["type(position) is not tuple", "len(position) != 2",
-                  "position[0] < 0", "position[1] < 0",
                   "type(position[0]) is not int",
-                  "type(position[1]) is not int"]
+                  "type(position[1]) is not int",
+                  "position[0] < 0", "position[1] < 0"]
         for i in checks:
             if eval(i):
                 raise TypeError(
