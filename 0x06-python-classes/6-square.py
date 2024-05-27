@@ -56,7 +56,8 @@ class Square(object):
 
     @position.setter
     def position(self, position):
-        if type(position) is tuple and position[0] >= 0 and position[1] >= 0\
+        if type(position) is tuple and len(position) == 2\
+           and position[0] >= 0 and position[1] >= 0\
            and type(position[0]) is int and type(position[1]) is int:
             self.__position = position
         else:
