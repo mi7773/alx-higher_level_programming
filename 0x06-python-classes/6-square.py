@@ -60,7 +60,7 @@ class Square(object):
            and type(position[0]) is int and type(position[1]) is int:
             self.__position = position
         else:
-            raise TypeError("a")
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
         """
