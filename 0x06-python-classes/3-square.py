@@ -27,7 +27,7 @@ class Square(object):
     def area(self):
         """
         Returns the current square area.
-        
+
         Returns:
             The current square area.
         """
