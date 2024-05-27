@@ -70,8 +70,9 @@ integers")
         """
         Prints in stdout the square with character #.
         """
-        for i in range(self.__position[1]):
-            print()
+        if self.__size != 0:
+            for i in range(self.__position[1]):
+                print()
         for j in range(self.__size):
             for i in range(self.__position[0]):
                 print(" ", end="")
