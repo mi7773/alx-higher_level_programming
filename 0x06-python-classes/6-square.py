@@ -63,7 +63,7 @@ class Square(object):
         for i in checks:
             if eval(i):
                 raise TypeError("position must be a tuple of 2 positive\
-                                integers")
+                                    integers")
         self.__position = position
 
     def my_print(self):
