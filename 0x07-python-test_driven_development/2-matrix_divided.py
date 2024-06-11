@@ -44,6 +44,9 @@ def matrix_divided(matrix, div):
     for row in matrix:
         sub_res = []
         for element in row:
-            sub_res.append(round((element / div), 2))
+            if div == float('inf') or div == -float('inf') or div != div:
+                sub_res.append(0)
+            else:
+                sub_res.append(round((element / div), 2))
         result.append(sub_res)
     return result
