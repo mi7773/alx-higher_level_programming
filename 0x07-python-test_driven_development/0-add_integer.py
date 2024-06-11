@@ -11,7 +11,7 @@ def add_integer(a, b=98):
 
     Args:
         a (int): The first parameter.
-        b (int): The second parameter.
+        b (int, float): The second parameter.
 
     Returns:
         int: Sum of 2 integers.
