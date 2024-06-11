@@ -16,6 +16,10 @@ def matrix_divided(matrix, div):
     Returns:
         list: The return of the function
     """
+    if matrix is None:
+        raise ValueError('missing matrix argument')
+    if div is None:
+        raise ValueError('missing div argument')
     if type(matrix) is not list:
         raise TypeError('matrix must be a matrix \
 (list of lists) of integers/floats')
