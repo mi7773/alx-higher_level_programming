@@ -12,9 +12,6 @@ def say_my_name(first_name, last_name=""):
     Args:
         first_name (str): The first parameter
         last_name (str): The second parameter
-
-    Returns:
-        str: The return of the function
     """
     if type(first_name) is not str:
         raise TypeError('first_name must be a string')
