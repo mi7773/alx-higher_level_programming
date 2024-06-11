@@ -4,6 +4,7 @@
 0-add_integer module.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds 2 integers.
