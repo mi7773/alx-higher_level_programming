@@ -17,3 +17,4 @@ TypeError: b must be an integer
 100
 >>> add_integer(-1, 6)
 5
+>>> add_integer(float('inf'))
