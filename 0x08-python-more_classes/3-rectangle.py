@@ -89,9 +89,11 @@ class Rectangle(object):
         return (self.__width + self.__height) * 2
 
     def __str__(self):
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    print('#', end='')
-                if i < self.__height - 1:
-                    print()
+        if not self.__width or not self.__height:
             return ''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end='')
+            if i < self.__height - 1:
+                print()
+        return ''
