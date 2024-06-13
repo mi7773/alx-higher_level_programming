@@ -89,11 +89,19 @@ class Rectangle(object):
         return (self.__width + self.__height) * 2
 
     def __str__(self):
+        """
+        Represents the rectangle with the character #.
+
+        Returns:
+            str: An informal and nicely printable string
+                representation of a rectangle.
+        """
         if not self.__width or not self.__height:
             return ''
+        rectangle = []
         for i in range(self.__height):
             for j in range(self.__width):
-                print('#', end='')
+                rectangle.append('#')
             if i < self.__height - 1:
-                print()
-        return ''
+                rectangle.append('\n')
+        return ''.join(rectangle)
