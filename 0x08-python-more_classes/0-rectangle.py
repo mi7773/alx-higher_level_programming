@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-0-rectangle module
+0-rectangle module.
 """
 
 
