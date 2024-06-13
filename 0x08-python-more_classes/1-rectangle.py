@@ -48,6 +48,10 @@ class Rectangle(object):
         Args:
             value (int): The value of width attribute.
         """
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        if value < 0:
+            raise ValueError('width must be >= 0')
         self.__width = value
 
     @height.setter
@@ -58,4 +62,8 @@ class Rectangle(object):
         Args:
             Value (int): The value of height attribute.
         """
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
+        if value < 0:
+            raise ValueError('height must be >= 0')
         self.__height = value
