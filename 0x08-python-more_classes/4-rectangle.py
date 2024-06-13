@@ -115,4 +115,4 @@ class Rectangle(object):
             str: An official string representation of a rectangle.
         """
         return 'Rectangle(' + str(self.__width) +\
-               ',' + str(self.__height) + ')'
+               ', ' + str(self.__height) + ')'
