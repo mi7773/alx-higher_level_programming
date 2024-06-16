@@ -32,8 +32,8 @@ class Rectangle(BaseGeometry):
         Returns:
             str: String representation.
         """
-        return '[' + self.__class__.__name__ + '] ' + str(self.__width) + '/' +\
-               str(self.__height)
+        return '[' + self.__class__.__name__ + '] ' + \
+               str(self.__width) + '/' + str(self.__height)
 
     def area(self):
         """
