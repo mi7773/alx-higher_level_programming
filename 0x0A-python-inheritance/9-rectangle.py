@@ -34,7 +34,7 @@ class Rectangle(BaseGeometry):
         """
         if args:
             self.__width, self.__height = args
-        return '[' + self.__class__.__name__ + '] ' + \
+        return '[' + 'Rectangle' + '] ' + \
                str(self.__width) + '/' + str(self.__height)
 
     def area(self):
