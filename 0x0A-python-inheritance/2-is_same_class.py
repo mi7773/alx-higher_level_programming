@@ -17,7 +17,7 @@ def is_same_class(obj, a_class):
     Returns:
         bool: True or False
     """
-    if eval(obj.__class__.__name__) is a_class:
+    if type(obj) is a_class:
         return True
     else:
         return False
