@@ -20,4 +20,4 @@ for i in sys.argv:
     else:
         saved.append(i)
 
-save_to_json_file(saved, 'add_items.json')
+save_to_json_file(saved, 'add_item.json')
