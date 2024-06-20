@@ -43,6 +43,6 @@ class Student(object):
         Args:
             json (dict): JSON.
         """
-        for k,v in json.items():
+        for k, v in json.items():
             if k in self.__dict__:
                 self.__dict__[k] = v
