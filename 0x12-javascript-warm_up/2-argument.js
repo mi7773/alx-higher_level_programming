@@ -2,7 +2,6 @@
 
 const { argv } = require('node:process');
 const len = argv.length;
-console.log(len);
 
 switch (len) {
   case 2:
