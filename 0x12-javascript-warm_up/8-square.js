@@ -4,10 +4,11 @@ const { argv } = require('node:process');
 
 if (!(isNaN(Number(argv[2])))) {
   for (let i = 0; i < Number(argv[2]); i++) {
+    let val = '';
     for (let j = 0; j < Number(argv[2]); j++) {
-      process.stdout.write('x');
+      val += 'x';
     }
-    console.log();
+    console.log(val);
   }
 } else {
   console.log('Missing size');
