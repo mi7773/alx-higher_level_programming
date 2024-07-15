@@ -6,7 +6,7 @@ if (!(isNaN(Number(argv[2])))) {
   for (let i = 0; i < Number(argv[2]); i++) {
     let val = '';
     for (let j = 0; j < Number(argv[2]); j++) {
-      val += 'x';
+      val += 'X';
     }
     console.log(val);
   }
