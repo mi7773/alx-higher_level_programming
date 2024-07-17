@@ -8,11 +8,14 @@ module.exports = class Rectangle {
     }
   }
 
-  print () {
+  print (c) {
     let i = 0;
     let shape = '';
     while (i < this.width) {
-      shape += 'X';
+      if (c === undefined) {
+        c = 'X';
+      }
+      shape += c;
       i++;
     }
     i = 0;
