@@ -11,6 +11,11 @@ class TestRectangle(unittest.TestCase):
         """ Testing not given x value """
 
         self.assertIsNotNone(Rectangle(1, 2))
+        self.assertEqual(Rectangle(1, 2).x, 0)
+        self.assertEqual(Rectangle(1, 2).y, 0)
+        self.assertEqual(Rectangle(1, 2).width, 1)
+        self.assertEqual(Rectangle(1, 2).height, 2)
+        self.assertEqual(Rectangle(1, 2).id, 10)
 
     def test_no_y(self):
         """ Testing not given y value """
