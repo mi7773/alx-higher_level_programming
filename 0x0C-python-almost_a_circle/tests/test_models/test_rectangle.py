@@ -15,4 +15,9 @@ class TestRectangle(unittest.TestCase):
     def test_no_y(self):
         """ Testing not given y value """
 
-        self.assertIsNotNone(Rectangle(1, 2))
+        self.assertIsNotNone(Rectangle(1, 2, 3))
+
+    def test_no_id(self):
+        """ Testing not given id value """
+
+        self.assertIsNotNone(Rectangle(1, 2, 3, 4))
