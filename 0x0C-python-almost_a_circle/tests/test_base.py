@@ -1,6 +1,7 @@
+#!/usr/bin/python3
+""" test_base """
 import unittest
 from models.base import Base
-""" test_base """
 
 
 class TestBase(unittest.TestCase):
