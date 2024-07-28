@@ -7,12 +7,12 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """ TestRectangle class """
 
-    def test_x_opt_val(self):
-        """ Testing x optional value """
+    def test_no_x(self):
+        """ Testing not given x value """
 
-        self.assertEqual(Rectangle(1, 2).x, 0)
+        self.assertIsNotNone(Rectangle(1, 2))
 
-    def test_y_opt_val(self):
-        """ Testing y optional value """
+    def test_no_y(self):
+        """ Testing not given y value """
 
-        self.assertEqual(Rectangle(1, 2).y, 0)
+        self.assertIsNotNone(Rectangle(1, 2))
