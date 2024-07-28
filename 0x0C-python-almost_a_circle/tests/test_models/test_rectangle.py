@@ -13,7 +13,6 @@ class TestRectangle(unittest.TestCase):
         self.r2 = Rectangle(1, 2, 3)
         self.r3 = Rectangle(1, 2, 3, 4)
 
-
     def tearDown(self):
         """ Cleaning up the test environment """
         Rectangle.reset()
