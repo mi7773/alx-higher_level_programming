@@ -7,9 +7,12 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """ TestRectangle class """
 
-    def test_width(self):
-        """ Testing width get and set methods """
+    def test_x_optional(self):
+        """ Testing x optional value """
 
-        r1 = Rectangle(1, 2, 3, 4, 5)
-        r1.width = 10
-        self.assertEqual(r1.width, 10)
+        self.assertEqual(Rectangle(1,2).x, 0)
+
+    def test_y_optional(self):
+        """ Testing y optional value """
+
+        self.assertEqual(Rectangle(1,2).y, 0)
