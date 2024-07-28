@@ -13,7 +13,7 @@ class Base(object):
         Initializes instances.
 
         Args:
-            id (int): The id.
+            id (int): The id value.
         """
 
         Base.__nb_objects += 1
