@@ -23,3 +23,7 @@ class Base(object):
             """ int: The id instance attribute """
         else:
             self.id = id
+
+    @classmethod
+    def reset(cls):
+        cls.__nb_objects = 0

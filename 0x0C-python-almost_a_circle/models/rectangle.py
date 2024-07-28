@@ -107,3 +107,7 @@ class Rectangle(Base):
             value (int): The new y value.
         """
         self.__y = value
+
+    @classmethod
+    def reset(cls):
+        Base.reset()
