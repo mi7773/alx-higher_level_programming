@@ -10,9 +10,9 @@ class TestRectangle(unittest.TestCase):
     def test_x_opt_val(self):
         """ Testing x optional value """
 
-        self.assertEqual(Rectangle(1,2).x, 0)
+        self.assertEqual(Rectangle(1, 2).x, 0)
 
     def test_y_opt_val(self):
         """ Testing y optional value """
 
-        self.assertEqual(Rectangle(1,2).y, 0)
+        self.assertEqual(Rectangle(1, 2).y, 0)
