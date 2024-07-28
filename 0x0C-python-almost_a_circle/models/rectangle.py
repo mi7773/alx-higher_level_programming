@@ -28,7 +28,8 @@ class Rectangle(Base):
         self.__y = y
         """ int: the y instance attribute """
 
-    def get_width(self):
+    @property
+    def width(self):
         """
         Returns the width of the instance.
 
@@ -37,7 +38,8 @@ class Rectangle(Base):
         """
         return self.__width
 
-    def get_height(self):
+    @property
+    def height(self):
         """
         Returns the height of the instance.
 
@@ -46,7 +48,8 @@ class Rectangle(Base):
         """
         return self.__height
 
-    def get_x(self):
+    @property
+    def x(self):
         """
         Returns the x of the instance.
 
@@ -55,7 +58,8 @@ class Rectangle(Base):
         """
         return self.__x
 
-    def get_y(self):
+    @property
+    def y(self):
         """
         Returns the y of the instance.
 
@@ -64,7 +68,8 @@ class Rectangle(Base):
         """
         return self.__y
 
-    def set_width(self, value):
+    @width.setter
+    def width(self, value):
         """
         Sets the value of the instance width.
 
@@ -73,7 +78,8 @@ class Rectangle(Base):
         """
         self.__width = value
 
-    def set_height(self, value):
+    @height.setter
+    def height(self, value):
         """
         Sets the value of the instance height.
 
@@ -82,7 +88,8 @@ class Rectangle(Base):
         """
         self.__height = value
 
-    def set_x(self, value):
+    @x.setter
+    def x(self, value):
         """
         Sets the value of the instance x.
 
@@ -91,7 +98,8 @@ class Rectangle(Base):
         """
         self.__x = value
 
-    def set_y(self, value):
+    @y.setter
+    def y(self, value):
         """
         Sets the value of the instance y.
 
