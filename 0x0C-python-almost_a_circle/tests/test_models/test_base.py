@@ -9,5 +9,4 @@ class TestBase(unittest.TestCase):
 
     def test_id(self):
         """ Testing id """
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
+        self.assertEqual(Base().id, 1)
