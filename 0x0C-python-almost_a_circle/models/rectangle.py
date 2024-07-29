@@ -158,12 +158,15 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints in stdout the rectangle instance with the character # """
-        print('\n' * self.y, end='')
+        r = []
+        r.append('\n' * self.y)
         for i in range(self.height):
-            print(' ' * self.x, end='')
+            r.append(' ' * self.x)
             for j in range(self.width):
-                print('#', end='')
-            print()
+                r.append('#')
+            r.append('\n')
+        print(''.join(r), end='')
+            
 
     def __str__(self):
         """
