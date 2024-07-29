@@ -36,3 +36,13 @@ class Square(Rectangle):
         # Rectangle.width.fset(self, value)
         # Square.width.__set__(self, value)
         # Rectangle.width.__set__(self, value)
+
+    def update(self, *args, **kwargs):
+        """
+        Assigns an argument to each attribute.
+
+        Args:
+            args (tuple): The arguments.
+            kwargs (dict): The arguments.
+        """
+        super().update(*args, **kwargs)

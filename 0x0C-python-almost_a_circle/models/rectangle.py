@@ -187,6 +187,7 @@ class Rectangle(Base):
 
         Args:
             args (tuple): The arguments.
+            kwargs (dict): The arguments.
         """
         if self.width == self.height:
             attr = ['id', 'size', 'x', 'y']
