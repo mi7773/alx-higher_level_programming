@@ -173,8 +173,11 @@ class Rectangle(Base):
 
         Returns:
             str: An informal and nicely printable string
-                representation of a rectangle.
+                representation of an instance.
         """
+        if self.width == self.height:
+            return f'[{self.__class__.__name__}] ({self.id}) \
+{self.x}/{self.y} - {self.width}'
         return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}'
 
