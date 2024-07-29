@@ -4,10 +4,8 @@
 
 class Base(object):
     """ Base class """
-
     __nb_objects = 0
     """ int: The number of objects class attribute """
-
     def __init__(self, id=None):
         """
         Initializes instances.
@@ -15,7 +13,6 @@ class Base(object):
         Args:
             id (int): The id value.
         """
-
         Base.__nb_objects += 1
 
         if id is None:
@@ -26,4 +23,5 @@ class Base(object):
 
     @classmethod
     def reset(cls):
+        """ Resets nb_objects class attribute """
         cls.__nb_objects = 0
