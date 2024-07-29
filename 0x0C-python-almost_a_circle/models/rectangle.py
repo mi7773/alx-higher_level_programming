@@ -162,3 +162,14 @@ class Rectangle(Base):
             for j in range(self.width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        """
+        Returns string representation.
+
+        Returns:
+            str: An informal and nicely printable string
+                representation of a rectangle.
+        """
+        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} \
+{self.width}/{self.height}'
