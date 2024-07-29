@@ -175,3 +175,16 @@ class Rectangle(Base):
         """
         return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}'
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute.
+
+        Args:
+            args (tuple): The arguments.
+        """
+        attr = [self.id, self.width, self.height, self.x, self.y]
+        i = 0
+        for arg in args:
+            attr[i] = arg
+            i += 1
