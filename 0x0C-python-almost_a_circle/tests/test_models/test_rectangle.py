@@ -106,7 +106,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_str(self):
         """ Testing the str method of the rectangle class """
-        self.assertEqual(str(self.r1), '[Rectangle] (1) 0/0 - 1/2')
+        self.assertEqual(self.r1.__str__(), '[Rectangle] (1) 0/0 - 1/2')
 
     def test_display(self):
         """ Testing the display method of the rectangle class """
