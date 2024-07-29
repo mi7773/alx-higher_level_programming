@@ -166,7 +166,6 @@ class Rectangle(Base):
                 r.append('#')
             r.append('\n')
         print(''.join(r), end='')
-            
 
     def __str__(self):
         """
