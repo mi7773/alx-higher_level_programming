@@ -29,8 +29,9 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        super().__init__(value, value, self.x, self.y, self.id)
         # super().width = value # fails
-        super(Square, Square).width.fset(self, value)
+        # super(Square, Square).width.fset(self, value)
         # super(Square, Square).width.__set__(self, value)
         # Square.width.fset(self, value)
         # Rectangle.width.fset(self, value)
