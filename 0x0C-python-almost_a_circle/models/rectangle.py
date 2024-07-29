@@ -130,3 +130,6 @@ class Rectangle(Base):
     def reset(cls):
         """ Resets nb_objects class attribute """
         Base.reset()
+        
+    def area(self):
+        return self.__width * self.__height
