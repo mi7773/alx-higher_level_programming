@@ -73,6 +73,10 @@ class Rectangle(Base):
 
         Args:
             value (int): The new width value.
+
+        Raises:
+            TypeError: If width is not int.
+            ValueError: If width is not > 0.
         """
         if type(value) is not int:
             raise TypeError('width must be an integer')
@@ -88,6 +92,10 @@ class Rectangle(Base):
 
         Args:
             value (int): The new height value.
+
+        Raises:
+            TypeError: If height is not int.
+            ValueError: If height is not > 0.
         """
         if type(value) is not int:
             raise TypeError('height must be an integer')
@@ -103,6 +111,10 @@ class Rectangle(Base):
 
         Args:
             value (int): The new x value.
+
+        Raises:
+            TypeError: If x is not int.
+            ValueError: If x is not >= 0.
         """
         if type(value) is not int:
             raise TypeError('x must be an integer')
@@ -118,6 +130,10 @@ class Rectangle(Base):
 
         Args:
             value (int): The new y value.
+
+        Raises:
+            TypeError: If y is not int.
+            ValueError: If y is not >= 0.
         """
         if type(value) is not int:
             raise TypeError('y must be an integer')
@@ -132,4 +148,5 @@ class Rectangle(Base):
         Base.reset()
         
     def area(self):
+        """ Calculates the area of the rectangle """
         return self.__width * self.__height

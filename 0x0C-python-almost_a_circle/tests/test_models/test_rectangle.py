@@ -6,7 +6,6 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """ TestRectangle class """
-
     def setUp(self):
         """ Setting up the test environment """
         self.r1 = Rectangle(1, 2)
@@ -19,7 +18,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_no_x(self):
         """ Testing not given x value """
-
         self.assertIsNotNone(self.r1)
         self.assertEqual(self.r1.x, 0)
         self.assertEqual(self.r1.y, 0)
@@ -29,7 +27,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_no_y(self):
         """ Testing not given y value """
-
         self.assertIsNotNone(self.r2)
         self.assertEqual(self.r2.x, 3)
         self.assertEqual(self.r2.y, 0)
@@ -39,10 +36,40 @@ class TestRectangle(unittest.TestCase):
 
     def test_no_id(self):
         """ Testing not given id value """
-
         self.assertIsNotNone(self.r3)
         self.assertEqual(self.r3.x, 3)
         self.assertEqual(self.r3.y, 4)
         self.assertEqual(self.r3.width, 1)
         self.assertEqual(self.r3.height, 2)
         self.assertEqual(self.r3.id, 3)
+
+    def test_width_val(self):
+        """ Testing the width validation """
+        with self.assertRaises(TypeError):
+            self.r1.width = '1'
+        with self.assertRaises(ValueError):
+            self.r1.width = -1
+
+    def test_height_val(self):
+        """ Testing the height validation """
+        with self.assertRaises(TypeError):
+            self.r1.height = '1'
+        with self.assertRaises(ValueError):
+            self.r1.height = -1
+
+    def test_x_val(self):
+        """ Testing the x validation """
+        with self.assertRaises(TypeError):
+            self.r1.x = '1'
+        with self.assertRaises(ValueError):
+            self.r1.x = -1
+
+    def test_y_val(self):
+        """ Testing the y validation """
+        with self.assertRaises(TypeError):
+            self.r1.y = '1'
+        with self.assertRaises(ValueError):
+            self.r1.y = -1
+
+    def test_area(self):
+        self.assertEqual(self.r1.area(), 2)
