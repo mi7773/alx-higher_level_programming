@@ -19,9 +19,20 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return Square.width.fget(self)
+        return super().width
+        # return super().width.fget(self) # fails
+        # return super().width.__get__() # fails
+        # return Square.width.__get__(self)
+        # return Rectangle.width.__get__(self)
+        # return Square.width.fget(self)
+        # return Rectangle.width.fget(self)
 
     @size.setter
     def size(self, value):
-        Rectangle.width.fset(self, value)
-        Rectangle.height.fset(self, value)
+        # super().width = value # fails
+        super(Square, Square).width.fset(self, value)
+        # super(Square, Square).width.__set__(self, value)
+        # Square.width.fset(self, value)
+        # Rectangle.width.fset(self, value)
+        # Square.width.__set__(self, value)
+        # Rectangle.width.__set__(self, value)
