@@ -104,6 +104,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r4.x, 200)
         self.r4.update(89, 2, 3, 4, 500)
         self.assertEqual(self.r4.y, 500)
+        self.r4.update(89, 2, 3, 4, 500, y=800)
+        self.assertEqual(self.r4.y, 500)
 
     def test_str(self):
         """ Testing the str method of the rectangle class """
