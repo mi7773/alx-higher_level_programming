@@ -16,6 +16,10 @@ class Square(Rectangle):
             id (int): The id value.
         """
         super().__init__(size, size, x, y, id)
+        # super(Square, self).__init__(size, size, x, y, id)
+        # super(Square, Square).__init__(self, size, size, x, y, id)
+        # Rectangle.__init__(self, size, size, x, y, id)
+        # Square.__init__(self, size, size, x, y, id)  # fails
 
     def __str__(self):
         """ Draft """
@@ -24,8 +28,8 @@ class Square(Rectangle):
     @property
     def size(self):
         return super().width
-        # return super().width.fget(self) # fails
-        # return super().width.__get__() # fails
+        # return super().width.fget(self)  # fails
+        # return super().width.__get__()  # fails
         # return Square.width.__get__(self)
         # return Rectangle.width.__get__(self)
         # return Square.width.fget(self)
@@ -34,7 +38,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         super().__init__(value, value, self.x, self.y, self.id)
-        # super().width = value # fails
+        # super().width = value  # fails
         # super(Square, Square).width.fset(self, value)
         # super(Square, Square).width.__set__(self, value)
         # Square.width.fset(self, value)
