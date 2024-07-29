@@ -56,34 +56,34 @@ class TestRectangle(unittest.TestCase):
     def test_width_val(self):
         """ Testing the width validation """
         with self.assertRaises(TypeError):
-            self.r1.width = '1'
+            Rectangle('1', 2)
         with self.assertRaises(ValueError):
-            self.r1.width = -1
+            Rectangle(-1, 2)
         with self.assertRaises(ValueError):
-            self.r1.width = 0
+            Rectangle(0, 2)
 
     def test_height_val(self):
         """ Testing the height validation """
         with self.assertRaises(TypeError):
-            self.r1.height = '1'
+            Rectangle(1, '2')
         with self.assertRaises(ValueError):
-            self.r1.height = -1
+            Rectangle(1, -2)
         with self.assertRaises(ValueError):
-            self.r1.height = 0
+            Rectangle(1, 0)
 
     def test_x_val(self):
         """ Testing the x validation """
         with self.assertRaises(TypeError):
-            self.r1.x = '1'
+            Rectangle(1, 2, '3')
         with self.assertRaises(ValueError):
-            self.r1.x = -1
+            Rectangle(1, 2, -3)
 
     def test_y_val(self):
         """ Testing the y validation """
         with self.assertRaises(TypeError):
-            self.r1.y = '1'
+            Rectangle(1, 2, 3, '4')
         with self.assertRaises(ValueError):
-            self.r1.y = -1
+            Rectangle(1, 2, 3, -4)
 
     def test_area(self):
         self.assertEqual(self.r1.area(), 2)
