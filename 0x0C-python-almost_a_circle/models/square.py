@@ -16,3 +16,12 @@ class Square(Rectangle):
             id (int): The id value.
         """
         super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        return Rectangle.width.fget(self)
+
+    @size.setter
+    def size(self, value):
+        Rectangle.width.fset(self, value)
+        Rectangle.height.fset(self, value)
