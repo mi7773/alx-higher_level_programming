@@ -146,7 +146,7 @@ class Rectangle(Base):
     def reset(cls):
         """ Resets nb_objects class attribute """
         Base.reset()
-        
+
     def area(self):
         """
         Calculates the area of the rectangle.
