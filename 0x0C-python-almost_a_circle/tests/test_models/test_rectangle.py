@@ -44,8 +44,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r3.height, 2)
         self.assertEqual(self.r3.id, 3)
 
-    def test_no_id(self):
-        """ Testing not given id value """
+    def test_all_is_given(self):
+        """ Testing all attributes are given """
         self.assertIsNotNone(self.r4)
         self.assertEqual(self.r4.x, 3)
         self.assertEqual(self.r4.y, 4)
@@ -91,6 +91,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_update(self):
         """ Testing the update method of the Rectangle class """
+        self.r4.update()
+        self.assertEqual(self.r4.width, 1)
         self.r4.update(89)
         self.assertEqual(self.r4.id, 89)
         self.r4.update(89, 99)
@@ -104,6 +106,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_str(self):
         """ Testing the str method of the rectangle class """
+        self.assertEqual(str(self.r1), '[Rectangle] (1) 0/0 - 1/2')
 
     def test_display(self):
         """ Testing the display method of the rectangle class """
