@@ -183,8 +183,8 @@ class Rectangle(Base):
         Args:
             args (tuple): The arguments.
         """
-        attr = [self.id , self.width, self.height, self.x, self.y]
+        attr = ['id', 'width', 'height', 'x', 'y']
         i = 0
         for arg in args:
-            attr[i] = arg
+            setattr(self, attr[i], arg)
             i += 1
