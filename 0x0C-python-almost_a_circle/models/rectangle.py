@@ -148,5 +148,17 @@ class Rectangle(Base):
         Base.reset()
         
     def area(self):
-        """ Calculates the area of the rectangle """
+        """
+        Calculates the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
         return self.__width * self.__height
+
+    def display(self):
+        """ Prints in stdout the rectangle instance with the character # """
+        for i in range(self.height):
+            for j in range(self.width):
+                print('#', end='')
+            print()
