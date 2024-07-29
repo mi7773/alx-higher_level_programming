@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ test_rectangle """
 import unittest
+from unittest.mock import patch
 from models.rectangle import Rectangle
 
 
@@ -108,5 +109,12 @@ class TestRectangle(unittest.TestCase):
         """ Testing the str method of the rectangle class """
         self.assertEqual(str(self.r1), '[Rectangle] (1) 0/0 - 1/2')
 
-    def test_display(self):
+    @patch('builtins.print')
+    def test_display(self, mock_print):
         """ Testing the display method of the rectangle class """
+        self.r1.display()
+        mock_print.assert_called_with('#\n#\n', end='')
+        self.r2.display()
+        mock_print.assert_called_with('   #\n   #\n', end='')
+        self.r3.display()
+        mock_print.assert_called_with('\n\n\n\n   #\n   #\n', end='')
