@@ -188,11 +188,18 @@ class Rectangle(Base):
         Args:
             args (tuple): The arguments.
         """
-        attr = ['id', 'width', 'height', 'x', 'y']
+        if self.width == self.height:
+            attr = ['id', 'size', 'x', 'y']
+        else:
+            attr = ['id', 'width', 'height', 'x', 'y']
         i = 0
         for arg in args:
+            if self.width == self.height and i == 1:
+                setattr(self, 'height', arg)
             setattr(self, attr[i], arg)
             i += 1
         if len(args) == 0:
             for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'height', value)
                 setattr(self, key, value)
