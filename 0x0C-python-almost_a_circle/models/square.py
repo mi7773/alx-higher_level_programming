@@ -19,7 +19,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return Rectangle.width.fget(self)
+        return Square.width.fget(self)
 
     @size.setter
     def size(self, value):
