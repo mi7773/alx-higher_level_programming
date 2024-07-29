@@ -171,5 +171,5 @@ class Rectangle(Base):
             str: An informal and nicely printable string
                 representation of a rectangle.
         """
-        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} \
+        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}'
