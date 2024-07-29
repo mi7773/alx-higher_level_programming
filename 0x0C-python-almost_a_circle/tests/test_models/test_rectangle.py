@@ -88,3 +88,22 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         """ Testing the area method of the Rectangle class """
         self.assertEqual(self.r1.area(), 2)
+        
+    def test_update(self):
+        """ Testing the update method of the Rectangle class """
+        self.r4.update(89)
+        self.assertEqual(self.r4.id, 89)
+        self.r4.update(89, 99)
+        self.assertEqual(self.r4.width, 99)
+        self.r4.update(89, 2, 100)
+        self.assertEqual(self.r4.height, 100)
+        self.r4.update(89, 2, 3, 200)
+        self.assertEqual(self.r4.x, 200)
+        self.r4.update(89, 2, 3, 4, 500)
+        self.assertEqual(self.r4.y, 500)
+
+    def test_str(self):
+        """ Testing the str method of the rectangle class """
+
+    def test_display(self):
+        """ Testing the display method of the rectangle class """
