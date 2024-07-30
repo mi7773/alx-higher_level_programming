@@ -204,3 +204,18 @@ class Rectangle(Base):
                 if key == 'size':
                     setattr(self, 'height', value)
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+
+        Returns:
+            dict: Representation of a Rectangle.
+        """
+        return {
+                'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width
+                }
