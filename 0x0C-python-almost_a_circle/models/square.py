@@ -55,3 +55,18 @@ class Square(Rectangle):
             kwargs (dict): The arguments.
         """
         super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+
+        Returns:
+            dict: Representation of a Rectangle.
+        """
+        # super().to_dictionary()
+        return {
+                'size': self.size,
+                'id': self.id,
+                'x': self.x,
+                'y': self.y
+                }

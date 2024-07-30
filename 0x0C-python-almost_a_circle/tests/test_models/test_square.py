@@ -129,3 +129,8 @@ class TestSquare(unittest.TestCase):
         mock_print.assert_called_with('  #\n', end='')
         self.s3.display()
         mock_print.assert_called_with('\n\n\n  #\n', end='')
+
+    def test_to_dictionary(self):
+        """ Testing to_dictionary method of the square class """
+        self.assertEqual(self.s1.to_dictionary(),
+                         {'size': 2, 'x': 0, 'y': 0, 'id': 1})
