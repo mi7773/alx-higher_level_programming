@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ test_rectangle """
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, mock_open
 from models.square import Square
 
 
@@ -134,3 +134,11 @@ class TestSquare(unittest.TestCase):
         """ Testing to_dictionary method of the square class """
         self.assertEqual(self.s1.to_dictionary(),
                          {'size': 1, 'x': 0, 'y': 0, 'id': 1})
+
+    @patch('builtins.open', new_callable=mock_open)
+    def test_save_to_file(self, mock_open):
+        """ Testing save_to_file method """
+        Square.save_to_file([self.s1, self.s2])
+        mock_open.assert_called_with('Square.json', 'w')
+        mock_open().write.assert_called_once_with('[{"x": 0, "y": 0, "id": 1, \
+"size": 1}, {"x": 2, "y": 0, "id": 2, "size": 1}]')

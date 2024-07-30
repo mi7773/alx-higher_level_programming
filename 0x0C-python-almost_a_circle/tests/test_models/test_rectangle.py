@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ test_rectangle """
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, mock_open
 from models.rectangle import Rectangle
 
 
@@ -147,3 +147,11 @@ class TestRectangle(unittest.TestCase):
         """ Testing to_dictionary method of the rectangle class """
         self.assertEqual(self.r1.to_dictionary(),
                          {'width': 1, 'height': 2, 'x': 0, 'y': 0, 'id': 1})
+
+    @patch('builtins.open', new_callable=mock_open)
+    def test_save_to_file(self, mock_open):
+        """ Testing save_to_file method """
+        Rectangle.save_to_file([self.r1, self.r2])
+        mock_open.assert_called_with('Rectangle.json', 'w')
+        mock_open().write.assert_called_once_with('[{"x": 0, "y": 0, "id": 1, \
+"height": 2, "width": 1}, {"x": 3, "y": 0, "id": 2, "height": 2, "width": 1}]')
