@@ -63,11 +63,5 @@ class Square(Rectangle):
         Returns:
             dict: Representation of a Rectangle.
         """
-        # super(Square, Square).to_dictionary(self)
-        # super().to_dictionary()
-        return {
-                'size': self.size,
-                'id': self.id,
-                'x': self.x,
-                'y': self.y
-                }
+        return super(Square, Square).to_dictionary(self)
+        # return super().to_dictionary()
