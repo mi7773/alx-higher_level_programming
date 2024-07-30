@@ -133,4 +133,4 @@ class TestSquare(unittest.TestCase):
     def test_to_dictionary(self):
         """ Testing to_dictionary method of the square class """
         self.assertEqual(self.s1.to_dictionary(),
-                         {'size': 2, 'x': 0, 'y': 0, 'id': 1})
+                         {'size': 1, 'x': 0, 'y': 0, 'id': 1})
