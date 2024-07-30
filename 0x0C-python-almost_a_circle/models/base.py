@@ -59,3 +59,18 @@ class Base(object):
                     lis.append(cls.to_dictionary(ins))
                 r = Base.to_json_string(lis)
                 file.write(r)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation json_string.
+
+        Args:
+            json_string (str): JSON string representation.
+
+        Returns:
+            list: The list of the JSON string representation.
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
