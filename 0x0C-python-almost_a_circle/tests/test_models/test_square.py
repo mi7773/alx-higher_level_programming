@@ -142,3 +142,11 @@ class TestSquare(unittest.TestCase):
         mock_open.assert_called_with('Square.json', 'w')
         mock_open().write.assert_called_once_with('[{"x": 0, "y": 0, "id": 1, \
 "size": 1}, {"x": 2, "y": 0, "id": 2, "size": 1}]')
+
+        Square.save_to_file(None)
+        mock_open.assert_called_with('Square.json', 'w')
+        mock_open().write.assert_called_with('[]')
+
+        Square.save_to_file([])
+        mock_open.assert_called_with('Square.json', 'w')
+        mock_open().write.assert_called_with('[]')

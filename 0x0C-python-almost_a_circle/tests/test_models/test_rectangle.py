@@ -155,3 +155,11 @@ class TestRectangle(unittest.TestCase):
         mock_open.assert_called_with('Rectangle.json', 'w')
         mock_open().write.assert_called_once_with('[{"x": 0, "y": 0, "id": 1, \
 "height": 2, "width": 1}, {"x": 3, "y": 0, "id": 2, "height": 2, "width": 1}]')
+
+        Rectangle.save_to_file(None)
+        mock_open.assert_called_with('Rectangle.json', 'w')
+        mock_open().write.assert_called_with('[]')
+
+        Rectangle.save_to_file([])
+        mock_open.assert_called_with('Rectangle.json', 'w')
+        mock_open().write.assert_called_with('[]')
