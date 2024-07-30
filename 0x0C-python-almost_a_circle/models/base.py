@@ -86,6 +86,9 @@ class Base(object):
         Returns:
             An instance.
         """
-        ins = cls(1, 1)
+        if cls.__name__ == 'Rectangle':
+            ins = cls(1, 1)
+        else:
+            ins = cls(1, 0)
         ins.update(**dictionary)
         return ins
