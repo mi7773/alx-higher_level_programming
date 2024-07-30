@@ -92,3 +92,24 @@ class Base(object):
             ins = cls(1, 0)
         ins.update(**dictionary)
         return ins
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances.
+
+        Returns:
+            list: A list of instances.
+        """
+        try:
+            with open(f'{cls.__name__}.json', 'r') as file:
+                json_string = file.read()
+                lis_dic = cls.from_json_string(json_string)
+                lis_ins = []
+                for dic in lis_dic:
+                    ins = cls.create(**dic)
+                    lis_ins.append(ins)
+        except Exception:
+            lis_ins = []
+        finally:
+            return lis_ins
