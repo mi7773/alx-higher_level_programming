@@ -142,3 +142,8 @@ class TestRectangle(unittest.TestCase):
         mock_print.assert_called_with('   #\n   #\n', end='')
         self.r3.display()
         mock_print.assert_called_with('\n\n\n\n   #\n   #\n', end='')
+
+    def test_to_dictionary(self):
+        """ Testing to_dictionary method of the rectangle class """
+        self.assertEqual(self.r1.to_dictionary(),
+                         {'width': 1, 'height': 2, 'x': 0, 'y': 0, 'id': 1})
