@@ -212,6 +212,13 @@ class Rectangle(Base):
         Returns:
             dict: Representation of a Rectangle.
         """
+        if self.width == self.height:
+            return {
+                    'x': self.x,
+                    'y': self.y,
+                    'id': self.id,
+                    'size': self.width
+                    }
         return {
                 'x': self.x,
                 'y': self.y,
