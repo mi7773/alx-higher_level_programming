@@ -28,3 +28,10 @@ class TestBase(unittest.TestCase):
     def test_id_manual_assign(self):
         """ Testing id manual assignment """
         self.assertEqual(self.b3.id, 456)
+
+    def test_to_json_string(self):
+        """ Testing to_json_string method """
+        self.assertEqual(Base.to_json_string(None), '[]')
+        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string([{'a': 1, 'b': 2, 'c': False}]),
+                         '[{"a": 1, "b": 2, "c": false}]')
