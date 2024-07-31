@@ -153,5 +153,5 @@ class TestSquare(unittest.TestCase):
 
     def test_create(self):
         """ Testing create method """
-        self.assertEqual(Square.create(**{'id': 9, 'size': 2, \
-'x': 4}).__str__(), '[Square] (9) 4/0 - 2')
+        self.assertEqual(Square.create(**{'id': 9, 'size': 2,
+                         'x': 4}).__str__(), '[Square] (9) 4/0 - 2')

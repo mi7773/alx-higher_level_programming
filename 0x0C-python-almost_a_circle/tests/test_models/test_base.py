@@ -54,5 +54,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string(''), [])
         self.assertEqual(Base.from_json_string('[{"c": "C", "false": false}, \
-{"a": "A", "true": true}]'), [{'c': 'C', 'false': False}, \
-{'a': 'A', 'true': True}])
+{"a": "A", "true": true}]'),
+                         [{'c': 'C', 'false': False},
+                         {'a': 'A', 'true': True}])
