@@ -155,3 +155,18 @@ class TestSquare(unittest.TestCase):
         """ Testing create method """
         self.assertEqual(Square.create(**{'id': 9, 'size': 2,
                          'x': 4}).__str__(), '[Square] (9) 4/0 - 2')
+
+    @patch('builtins.open', new_callable=mock_open,
+           read_data='[{"id": 99, "size": 3}, {"id": 88, "size": 7}]')
+    def test_load_from_file_success(self, mock_open):
+        """ Testing load_from_file method """
+        result = Square.load_from_file()
+        mock_open.assert_called_with('Square.json', 'r')
+        self.assertEqual(str(result[0]), '[Square] (99) 0/0 - 3')
+        self.assertEqual(str(result[1]), '[Square] (88) 0/0 - 7')
+
+    @patch('builtins.open', side_effect=Exception('error'))
+    def test_load_from_file_fail(self, mock_open):
+        """ Testing load_from_file method """
+        result = Square.load_from_file()
+        self.assertEqual(result, [])

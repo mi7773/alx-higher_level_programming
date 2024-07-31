@@ -168,3 +168,19 @@ class TestRectangle(unittest.TestCase):
         """ Testing create method """
         self.assertEqual(Rectangle.create(**{'id': 9, 'width': 2,
                          'height': 4}).__str__(), '[Rectangle] (9) 0/0 - 2/4')
+
+    @patch('builtins.open', new_callable=mock_open,
+           read_data='[{"id": 99, "width": 2, "height": 4},\
+ {"id": 88, "width": 6, "height": 8}]')
+    def test_load_from_file_success(self, mock_open):
+        """ Testing load_from_file method """
+        result = Rectangle.load_from_file()
+        mock_open.assert_called_with('Rectangle.json', 'r')
+        self.assertEqual(str(result[0]), '[Rectangle] (99) 0/0 - 2/4')
+        self.assertEqual(str(result[1]), '[Rectangle] (88) 0/0 - 6/8')
+
+    @patch('builtins.open', side_effect=Exception('error error error'))
+    def test_load_from_file_fail(self, mock_open):
+        """ Testing load_from_file method """
+        result = Rectangle.load_from_file()
+        self.assertEqual(result, [])
