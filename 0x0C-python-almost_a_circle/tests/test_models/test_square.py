@@ -150,3 +150,8 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([])
         mock_open.assert_called_with('Square.json', 'w')
         mock_open().write.assert_called_with('[]')
+
+    def test_create(self):
+        """ Testing create method """
+        self.assertEqual(Square.create(**{'id': 9, 'size': 2, \
+'x': 4}).__str__(), '[Square] (9) 4/0 - 2')

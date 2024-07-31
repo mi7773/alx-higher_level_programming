@@ -48,3 +48,11 @@ class TestBase(unittest.TestCase):
         mock_open.assert_called_with('Rectangle.json', 'w')
         mock_open().write.assert_called_once_with('[{"x": 0, "y": 0, "id": 4, \
 "height": 2, "width": 1}, {"x": 0, "y": 0, "id": 5, "size": 1}]')
+
+    def test_from_json_string(self):
+        """ Testing from_json_string method """
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(''), [])
+        self.assertEqual(Base.from_json_string('[{"c": "C", "false": false}, \
+{"a": "A", "true": true}]'), [{'c': 'C', 'false': False}, \
+{'a': 'A', 'true': True}])

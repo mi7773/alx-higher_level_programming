@@ -163,3 +163,8 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([])
         mock_open.assert_called_with('Rectangle.json', 'w')
         mock_open().write.assert_called_with('[]')
+
+    def test_create(self):
+        """ Testing create method """
+        self.assertEqual(Rectangle.create(**{'id': 9, 'width': 2, \
+'height': 4}).__str__(), '[Rectangle] (9) 0/0 - 2/4')
